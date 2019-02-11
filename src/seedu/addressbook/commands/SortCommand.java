@@ -19,7 +19,7 @@ public class SortCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        List<ReadOnlyPerson> allPersons = addressBook.getAllPersons().immutableListView();
-        return new CommandResult(getMessageForPersonListShownSummary(allPersons), allPersons);
+        List<ReadOnlyPerson> allPersons = addressBook.getAllPersons().sortedImmutableListView();
+        return new CommandResult(getMessageForPersonSortedListShownSummary(allPersons), allPersons);
     }
 }
